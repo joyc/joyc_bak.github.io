@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-keywords:
-author: John Doe
-language:
-timezone:
+title: Hython Note
+subtitle: 嗨森 Learning Python
+description: 想啥说啥
+keywords: python,hython
+author: Hython
+language: zh-Hans
+timezone: Japan
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://hython.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
