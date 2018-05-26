@@ -79,23 +79,18 @@
 
 
 
-<meta name="description" content="背景在书learn python the hardway的EX46练习中，需要安装pip,setuptools等模块。由于网上找到的资料过时，在此记录Windows10下的安装过程。  pip from http://pypi.python.org/pypi/pip setuptools from https://pypi.python.org/pypi/setuptools distribute">
+<meta name="description" content="Python 2.x中默认都是经典类，只有显式继承了object才是新式类Python 3.x中默认都是新式类，不必显式的继承object当类是经典类时，多继承情况下，会按照深度优先方式查找当类是新式类时，多继承情况下，会按照广度优先方式查找   写法不一样 12345class A:    passclass B(object):    pass  在多继承中，新式类采用广度优先搜索，而经典类">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python2.7.X Windows下之Pip安装">
-<meta property="og:url" content="http://hython.com/2016/11/27/python2-7-windows-pip/index.html">
+<meta property="og:title" content="Python面向对象中：经典类和新式类的区别">
+<meta property="og:url" content="http://hython.com/2017/07/30/python-new-class/index.html">
 <meta property="og:site_name" content="Hython Note">
-<meta property="og:description" content="背景在书learn python the hardway的EX46练习中，需要安装pip,setuptools等模块。由于网上找到的资料过时，在此记录Windows10下的安装过程。  pip from http://pypi.python.org/pypi/pip setuptools from https://pypi.python.org/pypi/setuptools distribute">
+<meta property="og:description" content="Python 2.x中默认都是经典类，只有显式继承了object才是新式类Python 3.x中默认都是新式类，不必显式的继承object当类是经典类时，多继承情况下，会按照深度优先方式查找当类是新式类时，多继承情况下，会按照广度优先方式查找   写法不一样 12345class A:    passclass B(object):    pass  在多继承中，新式类采用广度优先搜索，而经典类">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/383-0a25a04bf15c95d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/383-bf1cf5984e5b08e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/383-0dc2b9f6a38b01fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/383-5266c764dab853a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-05-26T14:37:26.497Z">
+<meta property="og:updated_time" content="2018-05-26T15:09:26.227Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python2.7.X Windows下之Pip安装">
-<meta name="twitter:description" content="背景在书learn python the hardway的EX46练习中，需要安装pip,setuptools等模块。由于网上找到的资料过时，在此记录Windows10下的安装过程。  pip from http://pypi.python.org/pypi/pip setuptools from https://pypi.python.org/pypi/setuptools distribute">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/383-0a25a04bf15c95d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="Python面向对象中：经典类和新式类的区别">
+<meta name="twitter:description" content="Python 2.x中默认都是经典类，只有显式继承了object才是新式类Python 3.x中默认都是新式类，不必显式的继承object当类是经典类时，多继承情况下，会按照深度优先方式查找当类是新式类时，多继承情况下，会按照广度优先方式查找   写法不一样 12345class A:    passclass B(object):    pass  在多继承中，新式类采用广度优先搜索，而经典类">
 
 
 
@@ -125,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://hython.com/2016/11/27/python2-7-windows-pip/"/>
+  <link rel="canonical" href="http://hython.com/2017/07/30/python-new-class/"/>
 
 
 
 
 
-  <title>Python2.7.X Windows下之Pip安装 | Hython Note</title>
+  <title>Python面向对象中：经典类和新式类的区别 | Hython Note</title>
   
 
 
@@ -258,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hython.com/2016/11/27/python2-7-windows-pip/">
+    <link itemprop="mainEntityOfPage" href="http://hython.com/2017/07/30/python-new-class/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hython">
@@ -275,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python2.7.X Windows下之Pip安装</h1>
+          <h1 class="post-title" itemprop="name headline">Python面向对象中：经典类和新式类的区别</h1>
         
 
         <div class="post-meta">
@@ -287,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-27T19:18:00+09:00">
-                2016-11-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-30T10:08:47+09:00">
+                2017-07-30
               </time>
             
 
@@ -325,27 +320,24 @@
       
 
       
-        <h5 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h5><p>在书<a href="https://learnpythonthehardway.org" target="_blank" rel="noopener">learn python the hardway</a>的<a href="https://learnpythonthehardway.org/book/ex46.html" target="_blank" rel="noopener">EX46</a>练习中，需要安装<code>pip</code>,<code>setuptools</code>等模块。<br>由于网上找到的资料过时，在此记录Windows10下的安装过程。</p>
-<ul>
-<li>pip from <a href="http://pypi.python.org/pypi/pip" target="_blank" rel="noopener">http://pypi.python.org/pypi/pip</a></li>
-<li>setuptools from <a href="https://pypi.python.org/pypi/setuptools" target="_blank" rel="noopener">https://pypi.python.org/pypi/setuptools</a></li>
-<li>distribute from <a href="http://pypi.python.org/pypi/distribute" target="_blank" rel="noopener">http://pypi.python.org/pypi/distribute</a></li>
-<li>nose from <a href="http://pypi.python.org/pypi/nose/" target="_blank" rel="noopener">http://pypi.python.org/pypi/nose/</a></li>
-<li>virtualenv from <a href="http://pypi.python.org/pypi/virtualenv" target="_blank" rel="noopener">http://pypi.python.org/pypi/virtualenv</a></li>
-</ul>
-<p>以pip为例，下载source file即可。<br><img src="http://upload-images.jianshu.io/upload_images/383-0a25a04bf15c95d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="下载说明"><br>下载并解压PIP等文件，我的结构如下。<br><img src="http://upload-images.jianshu.io/upload_images/383-bf1cf5984e5b08e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="解压目录"></p>
-<h6 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h6><ul>
-<li>方法1（联网情况下）<br>使用官方说明的<a href="https://bootstrap.pypa.io/get-pip.py" target="_blank" rel="noopener">get-pip.py</a>，并运行如下命令：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python get-pip.py</span><br></pre></td></tr></table></figure>
+        <blockquote>
+<p>Python 2.x中默认都是经典类，只有显式继承了object才是新式类<br>Python 3.x中默认都是新式类，不必显式的继承object<br>当类是经典类时，多继承情况下，会按照深度优先方式查找<br>当类是新式类时，多继承情况下，会按照广度优先方式查找</p>
+</blockquote>
+<ol>
+<li><p>写法不一样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class A:</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">class B(object):</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<p>安装如下：<br><img src="http://upload-images.jianshu.io/upload_images/383-0dc2b9f6a38b01fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="get-pip.py"></p>
-<ul>
-<li>方法2（断网情况下）<br>在解压好的pip目录下运行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python setup.py install</span><br></pre></td></tr></table></figure>
+<li><p>在多继承中，新式类采用广度优先搜索，而经典类是采用深度优先搜索。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"># 经典类例子</span><br><span class="line">class A:</span><br><span class="line">    def __init__(self):</span><br><span class="line">        print &apos;This is A&apos;</span><br><span class="line">    def save(self):</span><br><span class="line">        print &apos;save method from A&apos;</span><br><span class="line">class B (A):</span><br><span class="line">    def __init__(self):</span><br><span class="line">        print &apos;this is B&apos;</span><br><span class="line">class C (A):</span><br><span class="line">    def __init__(self):</span><br><span class="line">        print &apos;this is C&apos;</span><br><span class="line">    def save(self):</span><br><span class="line">        print &apos;save mothod from C&apos;</span><br><span class="line">class D(B,C):</span><br><span class="line">    def __init__(self):</span><br><span class="line">        print &apos;this is D&apos;</span><br><span class="line">d=D()</span><br><span class="line">d.save()</span><br><span class="line"># 输出结果：经典类的搜索顺序是D-&gt;B-&gt;A，是一种深度优先查找方式</span><br><span class="line">this is D</span><br><span class="line">save method from A</span><br><span class="line"></span><br><span class="line"># 新式类例子：</span><br><span class="line">class A(object):</span><br><span class="line">    def __init__(self):</span><br><span class="line">        print &apos;This is A&apos;</span><br><span class="line">    def save(self):</span><br><span class="line">        print &apos;save method from A&apos;</span><br><span class="line">class B (A):</span><br><span class="line">    def __init__(self):</span><br><span class="line">        print &apos;this is B&apos;</span><br><span class="line">class C (A):</span><br><span class="line">    def __init__(self):</span><br><span class="line">        print &apos;this is C&apos;</span><br><span class="line">    def save(self):</span><br><span class="line">        print &apos;save mothod from C&apos;</span><br><span class="line">class D(B,C):</span><br><span class="line">    def __init__(self):</span><br><span class="line">        print &apos;this is D&apos;</span><br><span class="line">d=D()</span><br><span class="line">d.save()</span><br><span class="line"></span><br><span class="line"># 运行结果：新式类的搜索顺序是D-&gt;B-&gt;C-&gt;A，是一种广度优先查找方式</span><br><span class="line">this is D</span><br><span class="line">save mothod from C</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<p>之后的安装同理。<br>有了pip就可以自由管理自己的module了。</p>
-<p>安装nose完毕后便可以测试自己的框架是否配置正确，<br>我的测试如下：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/383-5266c764dab853a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="测试结果"><br>第一次test由于字符编码问题没有通过，改正后就通过了。</p>
+<li><p>新式类新增</p>
+<ol>
+<li>新式类对象可以直接通过<code>__class__</code>属性获取自身类型:<code>type</code></li>
+<li>新式类增加了<code>__getattribute__</code>方法</li>
+<li>新式类增加了<code>__slots__</code>内置属性, 可以把实例属性的种类锁定到<code>__slots__</code>规定的范围之中。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Person(object):</span><br><span class="line">__slots__ = (&apos;name&apos;, &apos;age&apos;)   #只允许Person拥有name和age属性</span><br><span class="line">def __init__(self):</span><br><span class="line">    self.name=&apos;aline&apos;</span><br><span class="line">    self.age=20</span><br><span class="line">    self.sex=&apos;female&apos;</span><br><span class="line">person=Person()</span><br><span class="line"></span><br><span class="line"># 运行结果：报错</span><br><span class="line">AttributeError: &apos;Person&apos; object has no attribute &apos;sex&apos;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
 
       
     </div>
@@ -376,14 +368,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/06/25/LearnApacheSolr/" rel="next" title="Apache Solr 学习入门 (一)">
+                <i class="fa fa-chevron-left"></i> Apache Solr 学习入门 (一)
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/25/LearnApacheSolr/" rel="prev" title="Apache Solr 学习入门 (一)">
-                Apache Solr 学习入门 (一) <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/21/oracle-plsql/" rel="prev" title="Oracle PL/SQL 入门">
+                Oracle PL/SQL 入门 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -436,17 +432,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -497,22 +484,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#安装："><span class="nav-number">1.1.</span> <span class="nav-text">安装：</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
