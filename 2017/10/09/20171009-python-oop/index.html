@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Python说四十二章经之三入门面向对象[TOC]  面向对象三大特性：封装、继承和多态   创建类 创建方法  1234567# 构造方法__init__(self,arg)obj = 类(&apos;a1&apos;)# 普通方法obj = 类(&apos;xxx&apos;)obj.普通方法名()   1. 封装1234567class Bar:    def __init__(self, n, a):        self.n">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20171009_python_oop">
+<meta property="og:url" content="http://hython.com/2017/10/09/20171009-python-oop/index.html">
+<meta property="og:site_name" content="Hython&#39;s Note">
+<meta property="og:description" content="Python说四十二章经之三入门面向对象[TOC]  面向对象三大特性：封装、继承和多态   创建类 创建方法  1234567# 构造方法__init__(self,arg)obj = 类(&apos;a1&apos;)# 普通方法obj = 类(&apos;xxx&apos;)obj.普通方法名()   1. 封装1234567class Bar:    def __init__(self, n, a):        self.n">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-09T13:35:59.614Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="20171009_python_oop">
+<meta name="twitter:description" content="Python说四十二章经之三入门面向对象[TOC]  面向对象三大特性：封装、继承和多态   创建类 创建方法  1234567# 构造方法__init__(self,arg)obj = 类(&apos;a1&apos;)# 普通方法obj = 类(&apos;xxx&apos;)obj.普通方法名()   1. 封装1234567class Bar:    def __init__(self, n, a):        self.n">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hython.com/2017/10/09/20171009-python-oop/"/>
+
+
+
+
+
+  <title>20171009_python_oop | Hython's Note</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hython's Note</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Learning Memo</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hython.com/2017/10/09/20171009-python-oop/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hython">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hython's Note">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">20171009_python_oop</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-09T22:34:57+09:00">
+                2017-10-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Python说四十二章经之三入门面向对象"><a href="#Python说四十二章经之三入门面向对象" class="headerlink" title="Python说四十二章经之三入门面向对象"></a>Python说四十二章经之三入门面向对象</h2><p>[TOC]</p>
+<blockquote>
+<p>面向对象三大特性：封装、继承和多态</p>
+</blockquote>
+<ol>
+<li>创建类</li>
+<li>创建方法  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 构造方法</span></div><div class="line">__init__(self,arg)</div><div class="line">obj = 类(<span class="string">'a1'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 普通方法</span></div><div class="line">obj = 类(<span class="string">'xxx'</span>)</div><div class="line">obj.普通方法名()</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="1-封装"><a href="#1-封装" class="headerlink" title="1. 封装"></a>1. 封装</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bar</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, n, a)</span>:</span></div><div class="line">        self.name = n</div><div class="line">        self.age = a</div><div class="line">        </div><div class="line">b1 = Bar(<span class="string">'alex'</span>, <span class="number">123</span>)</div><div class="line">b2 = Bar(<span class="string">'SDF'</span>, <span class="number">23</span>)</div></pre></td></tr></table></figure>
+<ol>
+<li>类成员：字段，方法和属性。<ol>
+<li>字段：普通字段，静态字段</li>
+<li>方法：普通方法，类方法，静态方法</li>
+<li>属性：普通属性<blockquote>
+<p>注：所有成员中，只有普通字段的内容保存对象中，即：根据此类创建了多少对象，在内存中就有多少个普通字段。而其他的成员，则都是保存在类中，即：无论对象的多少，在内存中只创建一份。</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="2-继承"><a href="#2-继承" class="headerlink" title="2. 继承"></a>2. 继承</h3><h4 id="多继承"><a href="#多继承" class="headerlink" title="多继承"></a>多继承</h4><p>python子类（派生类）可以继承多个父类（基类）</p>
+<h4 id="经典类和新式类的区别："><a href="#经典类和新式类的区别：" class="headerlink" title="经典类和新式类的区别："></a>经典类和新式类的区别：</h4><blockquote>
+<p>Python 2.x中默认都是经典类，只有显式继承了object才是新式类<br>Python 3.x中默认都是新式类，不必显式的继承object<br>当类是经典类时，多继承情况下，会按照深度优先方式查找<br>当类是新式类时，多继承情况下，会按照广度优先方式查找</p>
+</blockquote>
+<ol>
+<li><p>写法不一样</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></div><div class="line">    <span class="keyword">pass</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="keyword">pass</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>在多继承中，新式类采用广度优先搜索，而经典类是采用深度优先搜索。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 经典类例子</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">print</span> <span class="string">'This is A'</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">save</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">print</span> <span class="string">'save method from A'</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="params">(A)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">print</span> <span class="string">'this is B'</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span> <span class="params">(A)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">print</span> <span class="string">'this is C'</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">save</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">print</span> <span class="string">'save mothod from C'</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span><span class="params">(B,C)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">print</span> <span class="string">'this is D'</span></div><div class="line">d=D()</div><div class="line">d.save()</div><div class="line"><span class="comment"># 输出结果：经典类的搜索顺序是D-&gt;B-&gt;A，是一种深度优先查找方式</span></div><div class="line">this <span class="keyword">is</span> D</div><div class="line">save method <span class="keyword">from</span> A</div><div class="line"></div><div class="line"><span class="comment"># 新式类例子：</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">print</span> <span class="string">'This is A'</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">save</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">print</span> <span class="string">'save method from A'</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="params">(A)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">print</span> <span class="string">'this is B'</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span> <span class="params">(A)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">print</span> <span class="string">'this is C'</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">save</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">print</span> <span class="string">'save mothod from C'</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span><span class="params">(B,C)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">print</span> <span class="string">'this is D'</span></div><div class="line">d=D()</div><div class="line">d.save()</div><div class="line"></div><div class="line"><span class="comment"># 运行结果：新式类的搜索顺序是D-&gt;B-&gt;C-&gt;A，是一种广度优先查找方式</span></div><div class="line">this <span class="keyword">is</span> D</div><div class="line">save mothod <span class="keyword">from</span> C</div><div class="line"></div><div class="line"><span class="comment"># 注意：在上述查找过程中，一旦找到，则寻找过程立即中断，便不会再继续找了</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>新式类新增</p>
+<ol>
+<li>新式类对象可以直接通过<code>__class__</code>属性获取自身类型:<code>type</code></li>
+<li>新式类增加了<code>__getattribute__</code>方法</li>
+<li>新式类增加了<code>__slots__</code>内置属性, 可以把实例属性的种类锁定到<code>__slots__</code>规定的范围之中。<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span><span class="params">(object)</span>:</span></div><div class="line">__slots__ = (<span class="string">'name'</span>, <span class="string">'age'</span>)   <span class="comment">#只允许Person拥有name和age属性</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">    self.name=<span class="string">'aline'</span></div><div class="line">    self.age=<span class="number">20</span></div><div class="line">    self.sex=<span class="string">'female'</span></div><div class="line">person=Person()</div><div class="line"></div><div class="line"><span class="comment"># 运行结果：报错</span></div><div class="line">AttributeError: <span class="string">'Person'</span> object has no attribute <span class="string">'sex'</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="3-多态"><a href="#3-多态" class="headerlink" title="3. 多态"></a>3. 多态</h3><p>python原生支持多态</p>
+<h3 id="4-类成员"><a href="#4-类成员" class="headerlink" title="4. 类成员"></a>4. 类成员</h3><p>类成员：字段，方法和属性。</p>
+<ol>
+<li>字段：普通字段，静态字段</li>
+<li>方法：普通方法，类方法，静态方法</li>
+<li>属性：普通属性</li>
+</ol>
+<blockquote>
+<p>注：所有成员中，只有普通字段的内容保存对象中，即：根据此类创建了多少对象，在内存中就有多少个普通字段。而其他的成员，则都是保存在类中，即：无论对象的多少，在内存中只创建一份。</p>
+</blockquote>
+<h4 id="字段"><a href="#字段" class="headerlink" title="字段"></a>字段</h4><ul>
+<li><code>类.字段</code> 可以直接访问</li>
+</ul>
+<h5 id="普通字段"><a href="#普通字段" class="headerlink" title="普通字段"></a>普通字段</h5><p>保存在对象中，只能通过对象访问。</p>
+<h5 id="静态字段"><a href="#静态字段" class="headerlink" title="静态字段"></a>静态字段</h5><p>当使用公用字段时候，可以使用静态字段来节省内存空间。</p>
+<p>保存在类中，可通过兑现访问，也可通过类访问。    </p>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ul>
+<li><code>类.方法()</code> 加括号访问方法</li>
+</ul>
+<h5 id="普通方法"><a href="#普通方法" class="headerlink" title="普通方法"></a>普通方法</h5><p>保存在类中，需要先创建对象，然后通过对象调用或者类来调用。</p>
+<p>一般通过创建的对象来调用，因为后者需要传参。</p>
+<p>参数<code>self</code> 指示对象。</p>
+<h5 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h5><p>保存在类中，通过<code>@staticmethod</code> 装饰器来创建，方法可以不加<code>self</code>参数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span>:</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">bar</span><span class="params">(self)</span>:</span></div><div class="line">        print(<span class="string">'bar'</span>)</div><div class="line">        </div><div class="line"><span class="meta">    @staticmethod</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sta</span><span class="params">()</span>:</span></div><div class="line">        print(<span class="string">'123'</span>)</div><div class="line"></div><div class="line"><span class="meta">    @staticmethod</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">stat</span><span class="params">(a1, a2)</span>:</span></div><div class="line">        print(a1, a2)</div><div class="line"></div><div class="line">Foo.sta()</div><div class="line">Foo.stat(<span class="number">1</span>, <span class="number">2</span>)</div></pre></td></tr></table></figure>
+<h5 id="类方法"><a href="#类方法" class="headerlink" title="类方法"></a>类方法</h5><p>保存在类中，用<code>@classmethod</code> 来创建类方法。参数一般写成<code>cls</code> ，执行时会被自动传入，指示当前类。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span>:</span></div><div class="line"><span class="meta">    @classmethod</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">classmd</span><span class="params">(cls)</span>:</span></div><div class="line">        <span class="comment"># cls是当前类名</span></div><div class="line">        print(cls)</div><div class="line">        print(<span class="string">'classmd'</span>)</div></pre></td></tr></table></figure>
+<h5 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h5><p>如果对象中需要保存一些值，执行某功能时，需要使用对象中的值，使用普通方法。不需要任何对象中的值时，使用静态方法。</p>
+<h5 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h5><p>保存在类中，使用<code>@property</code> 装饰器创建，像普通定义方法一样需要self参数，像调用属性一样不加括号。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@property</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">per</span><span class="params">(self)</span>:</span></div><div class="line">  <span class="keyword">return</span> <span class="number">1</span></div><div class="line">sbj = Foo()</div><div class="line">r = obj.per</div><div class="line">print(r)</div></pre></td></tr></table></figure>
+<h5 id="成员修饰符"><a href="#成员修饰符" class="headerlink" title="成员修饰符"></a>成员修饰符</h5><p>属性和方法都有分为公有成员和私有成员</p>
+<ul>
+<li><p>私有成员：</p>
+<p> 前方加俩下划线： __字段名  </p>
+<p>无法直接访问，只能间接访问，继承父类内部的私有也不能执行，只能执行自己类内部的。</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span>:</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, age)</span>:</span></div><div class="line">        self.name = name</div><div class="line">        self.age = age</div><div class="line">        self.__age = age <span class="comment"># 私有,外部无法直接访问</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">show</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> self.__age</div><div class="line"></div><div class="line">obj = Foo(<span class="string">'robin'</span>, <span class="number">26</span>)</div><div class="line">print(obj.name)</div><div class="line">ret = obj.show()</div><div class="line">print(ret)</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span>:</span></div><div class="line">    __v = <span class="string">'123'</span>	<span class="comment"># 静态属性</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">pass</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">show</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> Foo.__v</div><div class="line"><span class="meta">    @staticmethod</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">stat</span><span class="params">()</span>:</span></div><div class="line">        <span class="keyword">return</span> Foo.__v</div><div class="line"></div><div class="line"><span class="comment"># ret = Foo().show()</span></div><div class="line"><span class="comment"># print(ret)</span></div><div class="line"></div><div class="line">ret = Foo.stat()</div><div class="line">print(ret)</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span>:</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__f1</span><span class="params">(self)</span>:</span> <span class="comment">#私有方法</span></div><div class="line">       <span class="keyword">return</span> <span class="number">123</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">(self)</span>:</span>	<span class="comment">#通过方法f2调用私有的f1方法</span></div><div class="line">        r = self.__f1()</div><div class="line">        <span class="keyword">return</span> r</div><div class="line"></div><div class="line">obj = Foo()</div><div class="line">ret = obj.f2()</div><div class="line">print(ret)</div></pre></td></tr></table></figure>
+<h5 id="特殊成员"><a href="#特殊成员" class="headerlink" title="特殊成员"></a>特殊成员</h5><ul>
+<li><code>__init__</code> 由类()自动执行</li>
+<li><code>__call__</code> 方法 对象() ，类()() 自动执行</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        print(<span class="string">'init'</span>)</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, *args, **kwargs)</span>:</span></div><div class="line">        print(<span class="string">'call'</span>)</div><div class="line"></div><div class="line">obj = Foo()</div><div class="line">obj() <span class="comment"># 对象加括号执行的call特殊方法</span></div><div class="line">Foo()() <span class="comment"># 执行方式等同于上面的obj()</span></div></pre></td></tr></table></figure>
+<ul>
+<li><p><code>__add__</code>方法</p>
+<p>连个对象相加时，自动执行第一个对象的<code>__add__</code> 方法，并且将第二个对象当作参数传递进入</p>
+</li>
+<li><p><code>__int__</code> int(对象)</p>
+</li>
+<li><p><code>__str__</code> str() </p>
+</li>
+<li><p><code>__del__</code> 析构方法，对象被销毁()时，自动执行。</p>
+</li>
+<li><p><code>__dict__</code> 将对象中封装的所有成员（包括不可见私有成员），内容通过字典的形式返回</p>
+</li>
+<li><p><code>__getitem__</code> ,<code>__setitem__</code> 和<code>__delitem__</code> 只有第一个getitem有返回值。</p>
+</li>
+<li><p><code>__iter__</code> 方法，如果类中有这个方法，对象即为可迭代对象，<code>对象.__iter__()</code> 的返回值是迭代器 。</p>
+</li>
+</ul>
+<h4 id="metaclass-元类-原始类"><a href="#metaclass-元类-原始类" class="headerlink" title="metaclass 元类/原始类"></a>metaclass 元类/原始类</h4><ol>
+<li>python中一切皆对象。</li>
+<li>创建对象时候默认执行type类中的init方法。 </li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/09/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/09/正则表达式笔记/" rel="prev" title="正则表达式笔记">
+                正则表达式笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Hython</p>
+              <p class="site-description motion-element" itemprop="description">Happy Python</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python说四十二章经之三入门面向对象"><span class="nav-number">1.</span> <span class="nav-text">Python说四十二章经之三入门面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-封装"><span class="nav-number">1.1.</span> <span class="nav-text">1. 封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-继承"><span class="nav-number">1.2.</span> <span class="nav-text">2. 继承</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#多继承"><span class="nav-number">1.2.1.</span> <span class="nav-text">多继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#经典类和新式类的区别："><span class="nav-number">1.2.2.</span> <span class="nav-text">经典类和新式类的区别：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-多态"><span class="nav-number">1.3.</span> <span class="nav-text">3. 多态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-类成员"><span class="nav-number">1.4.</span> <span class="nav-text">4. 类成员</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字段"><span class="nav-number">1.4.1.</span> <span class="nav-text">字段</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#普通字段"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">普通字段</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#静态字段"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">静态字段</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法"><span class="nav-number">1.4.2.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#普通方法"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">普通方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#静态方法"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">静态方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#类方法"><span class="nav-number">1.4.2.3.</span> <span class="nav-text">类方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#应用场景"><span class="nav-number">1.4.2.4.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#属性"><span class="nav-number">1.4.2.5.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#成员修饰符"><span class="nav-number">1.4.2.6.</span> <span class="nav-text">成员修饰符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#特殊成员"><span class="nav-number">1.4.2.7.</span> <span class="nav-text">特殊成员</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#metaclass-元类-原始类"><span class="nav-number">1.4.3.</span> <span class="nav-text">metaclass 元类/原始类</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hython</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a></div>
+
+<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
