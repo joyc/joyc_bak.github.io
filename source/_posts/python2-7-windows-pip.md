@@ -1,8 +1,11 @@
 ---
 title: Python2.7.X Windows下之Pip安装
 date: 2016-11-27 19:18:00
-tags: python
+categories: learnpython
+tags: 
+  - Python
 ---
+
 ##### 背景
 在书[learn python the hardway](https://learnpythonthehardway.org)的[EX46](https://learnpythonthehardway.org/book/ex46.html)练习中，需要安装`pip`,`setuptools`等模块。
 由于网上找到的资料过时，在此记录Windows10下的安装过程。

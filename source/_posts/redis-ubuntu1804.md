@@ -1,8 +1,12 @@
 ---
 title: Ubuntu18.04下的Redis常用操作
 date: 2018-05-26 12:15:01
-tags: redis, ubuntu
+categories: Infrastructure
+tags: 
+  - Redis
+  - Ubuntu
 ---
+
 ## Ubuntu18.04中安装Redis
 
 ### 准备工作

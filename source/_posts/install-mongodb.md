@@ -1,8 +1,12 @@
 ---
 title: Mac和Ubuntu18.04下MongoDB的安装
 date: 2018-05-23 00:13:17
-tags: mongodb
+categories: Infrastructure
+tags: 
+  - MongoDB
+  - Ubuntu
 ---
+
 ## Mac安装mongodb
 
 ###使用`home-brew`安装

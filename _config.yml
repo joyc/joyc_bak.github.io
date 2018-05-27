@@ -81,3 +81,9 @@ deploy:
   type: git
   repository: https://github.com/joyc/joyc.github.io.git
   branch: master
+
+# Site Search
+algolia:
+  applicationID: 'PYBPMT4ZQI'
+  indexName: 'hythonblog'
+  chunkSize: 5000

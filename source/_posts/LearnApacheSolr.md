@@ -1,9 +1,11 @@
 ---
 title: Apache Solr 学习入门 (一)
 date: 2017-06-25 00:07:05
-tags: Solr
+categories: architecture
+tags: 
+  - Apache Solr
 ---
-### Apache Solr 学习入门 (一)
+
 >学习环境：  
 OS：CentOS 7 mini  
 Apache Solr 6.3.0

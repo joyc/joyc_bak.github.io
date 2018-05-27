@@ -1,8 +1,11 @@
 ---
 title: Python面向对象中：经典类和新式类的区别
 date: 2017-07-30 10:08:47
-tags: python
+categories: learnpython
+tags: 
+  - Python
 ---
+
 > Python 2.x中默认都是经典类，只有显式继承了object才是新式类  
 Python 3.x中默认都是新式类，不必显式的继承object  
 当类是经典类时，多继承情况下，会按照深度优先方式查找  

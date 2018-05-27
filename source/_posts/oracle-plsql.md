@@ -1,8 +1,12 @@
 ---
 title: Oracle PL/SQL 入门
 date: 2017-08-21 22:17:07
-tags: PL/SQL
+categories: architecture
+tags: 
+  - PL/SQL
+  - Oracle
 ---
+
 ### 正则表达式
 #### 字符类别
 类别 | 描述
